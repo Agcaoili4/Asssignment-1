@@ -117,7 +117,9 @@ nav li {
 }
 
 #convert,
-#convert-temp {
+#convert-temp,
+#sortName,
+#sortSalary {
   padding: 10px 20px;
   background-color: black;
   color: white;
@@ -129,7 +131,9 @@ nav li {
 }
 
 #convert:hover,
-#convert-temp:hover {
+#convert-temp:hover,
+#sortName:hover,
+#sortSalary:hover {
   background-color: gray;
 }
 
@@ -144,21 +148,23 @@ nav li {
 }
 
 /*Staff design*/
-.staffDataHolder {
+#staff {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
-  padding: 2rem;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 1rem;
 }
-
+.staffDataHolder {
+  display: grid;
+  gap: 1.5rem;
+}
 .staff-card {
-  border: 1px solid #ccc;
+  background-color: white;
+  border: 1px solid white;
   border-radius: 8px;
-  padding: 1rem;
-  margin: 1rem 0;
-  background-color: #f9f9f9;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 1.2rem;
+  box-shadow: 0 2px 5px black;
 }
 
 /*Temperature Converter design*/

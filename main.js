@@ -38,7 +38,11 @@ if (convertBtn && markInput && markOutput) {
 }
 
 //Code for staff starts here
-import {} from "./staff-members.js"
+import { Staff } from './staff-members.js';
+const staff = new Staff();
+staff.init();
+
+
 //Code for Temp converter starts here
 import {ConvertTemp} from "./temperature-converter.js";
 

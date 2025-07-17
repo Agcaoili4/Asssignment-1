@@ -1,7 +1,8 @@
 //Code for staff starts here
-export class Staff{
-    staff(){
-let dataSet = [   
+//Create a class name Staff 
+export class Staff {
+  constructor() {
+    this.dataSet =   [   
     [ "Brielle Williamson", "Integration Specialist", "New York", "4804", "2012/12/02", "$372,000" ],
     [ "Herrod Chandler", "Sales Assistant", "San Francisco", "9608", "2012/08/06", "$137,500" ],
     [ "Rhona Davidson", "Integration Specialist", "Tokyo", "6200", "2010/10/14", "$327,900" ],
@@ -38,7 +39,56 @@ let dataSet = [
     [ "Gavin Cortez", "Team Leader", "San Francisco", "2860", "2008/10/26", "$235,500" ],
     [ "Martena Mccray", "Post-Sales support", "Edinburgh", "8240", "2011/03/09", "$324,050" ],
     [ "Unity Butler", "Marketing Designer", "San Francisco", "5384", "2009/12/09", "$85,675" ]
-];
+    ];
+    this.ascendingName = true;
+    this.ascendingSalary = true;
+  }
+
+    //Create local function called insert that holds a parameter to display data
+    insert(data){
+        //query selector for class call
+        const sort = document.querySelector(".staffDataHolder");
+        sort.innerHTML = data.map(person =>`
+        <div class="staff-card">
+            <h3>${person[0]}</h3>
+            <p>Position: ${person[1]}</p>
+            <p>Location: ${person[2]}</p>
+            <p>Salary: ${person[5]}</p>
+        </div>
+        `)
+        .join("");
+    }
+    
+    //Create a local function called sortName to sort the data 
+    sortName() {
+    const sorted = [...this.dataSet].sort((a, b) => {
+        //Compares if the first name of the person
+        return this.ascendingName ? (a[0] > b[0] ? 1 : -1) : (a[0] < b[0] ? 1 : -1);
+    });
+    this.ascendingName = !this.ascendingName;
+    this.insert(sorted);
+    }
+
+    //Create a local function called sortSalary to sort the data by salary
+
+    sortSalary() {
+    const sorted = [...this.dataSet].sort((a, b) => {
+    // parseInt removes non-numeric characters from the salary string
+    const salaryA = parseInt(a[5].replace(/\D/g, ""));
+    const salaryB = parseInt(b[5].replace(/\D/g, ""));
+
+    return this.ascendingSalary ? salaryA - salaryB : salaryB - salaryA;
+    });
+
+    this.ascendingSalary = !this.ascendingSalary;
+    this.insert(sorted); // Call the insert method to display sorted data
+    }
+    
+    init() {
+    this.insert(this.dataSet);
+    document.getElementById("sortName").addEventListener("click", () => this.sortName());
+    document.getElementById("sortSalary").addEventListener("click", () => this.sortSalary());
+    }
 //   const convertBtn = document.getElementById("convert");
 //   if (convertBtn) {
 //     convertBtn.addEventListener("click", convertGrade);
@@ -56,4 +106,4 @@ let dataSet = [
 
 // document.querySelector(".staffDataHolder").innerHTML = sort;
 //Call temp class
-}};
+}    
