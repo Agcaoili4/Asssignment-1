@@ -10,17 +10,18 @@
 */
 
 //Code starts here
-
+//Setting current year to footer
+const yearSpan = document.getElementById("year");
+if (yearSpan) {
+  const currentYear = new Date().getFullYear();
+  yearSpan.textContent = currentYear;
+}
 //Setting timeout to the picture by accessing it's id
 setTimeout(() => {
   const image = document.getElementById("delayed-image");
-  image.classList.add("show");
-}, 10000);
-
-//Setting current year to footer
-const yearSpan = document.getElementById("year");
-const currentYear = new Date().getFullYear();
-yearSpan.textContent = currentYear;
+  if (image) {
+    image.classList.add("show");
+  }}, 10000);
 
 //Code for mark-to-grade starts here
 import {convertGrade} from "./grade-converter.js";
@@ -39,8 +40,11 @@ if (convertBtn && markInput && markOutput) {
 
 //Code for staff starts here
 import { Staff } from './staff-members.js';
-const staff = new Staff();
-staff.init();
+
+if (document.querySelector(".staffDataHolder")) {
+  const staff = new Staff();
+  staff.init();
+}
 
 
 //Code for Temp converter starts here
@@ -48,9 +52,10 @@ import {ConvertTemp} from "./temperature-converter.js";
 
 //Create variables to store the elements for a better clean code
 const convertBtnTemp = document.getElementById("convert-temp");
-const converter = new ConvertTemp();
 
-convertBtnTemp.addEventListener("click", () => {
-  converter.convert();
-});
-
+if (convertBtnTemp) {
+  const converter = new ConvertTemp();
+  convertBtnTemp.addEventListener("click", () => {
+    converter.convert();
+  });
+}
