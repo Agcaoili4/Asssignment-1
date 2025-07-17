@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 1</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body id="my-body">
+    <header>
+      <nav id="nav-links">
+        <h1><a href="index.html">Arnold Jansen Agcaoili</a></h1>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="mark-to-Grade.html">Mark to Grade</a></li>
+          <li><a href="staff.html">Staff</a></li>
+          <li>
+            <a href="temperature-Converter.html">Temperature Converter</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section id="temperature-Converter" class="section">
+        <h1>Temperature Converter</h1>
+        <br />
+        <label for="temp-1">From: </label>
+        <select name="temp" id="temp-1">
+          <option value="fahrenheit">Fahrenheit</option>
+          <option value="celsius">Celsius</option>
+          <option value="kelvin">Kelvin</option>
+        </select>
+        <label for="input-temp">Enter Temperature: </label>
+        <input type="text" id="temp-input-box" /><br />
+        <label for="temp-2">To: </label>
+        <select name="temp" id="temp-2">
+          <option value="fahrenheit">Fahrenheit</option>
+          <option value="celsius">Celsius</option>
+          <option value="kelvin">Kelvin</option>
+        </select>
+        <button id="convert-temp">Enter</button>
+        <div id="temp-output-box"></div>
+      </section>
+    </main>
+    <footer id="footer">
+      <p>&copy; <span id="year"></span> Arnold Jansen Agcaoili</p>
+    </footer>
+    <!--Make sure to add script below inside the body-->
+    <script type="module" src="main.js"></script>
+  </body>
+</html>

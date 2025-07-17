@@ -105,7 +105,8 @@ nav li {
   flex-wrap: wrap;
   padding: 1rem;
 }
-#mark-input-box {
+#mark-input-box,
+#temp-input-box {
   padding: 10px;
   font-size: 1rem;
   border: 2px solid #ccc;
@@ -115,7 +116,8 @@ nav li {
   text-align: center;
 }
 
-#convert {
+#convert,
+#convert-temp {
   padding: 10px 20px;
   background-color: black;
   color: white;
@@ -126,11 +128,13 @@ nav li {
   transition: background-color 0.3s ease;
 }
 
-#convert:hover {
+#convert:hover,
+#convert-temp:hover {
   background-color: gray;
 }
 
-#mark-output {
+#mark-output,
+#temp-output-box {
   margin-top: 15px;
   font-size: 1.1rem;
   padding: 10px;
@@ -140,3 +144,41 @@ nav li {
 }
 
 /*Staff design*/
+.staffDataHolder {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 2rem;
+  justify-content: center;
+}
+
+.staff-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1rem 0;
+  background-color: #f9f9f9;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/*Temperature Converter design*/
+#temperature-Converter {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 1rem;
+}
+#temp {
+  padding: 5px 10px;
+  background-color: gray;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+#temp:hover {
+  background: white;
+  color: black;
+}
